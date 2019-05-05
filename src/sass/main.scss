@@ -91,3 +91,45 @@ p {
 .flip-clock-dot {
   background: $white;
 }
+
+.mobile-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  h2  {
+    margin: 30px 0 23px 0;
+  }
+
+  .flip-clock-wrapper ul {
+    width: 35px;
+  }
+
+  .flip-clock-divider .flip-clock-label {
+    right: -68px;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 50px;
+  }
+
+  p {
+    max-width: 100%;
+  }
+
+  body {
+    padding: 20px 0;
+    background: linear-gradient(#9938D2, #351087);
+  }
+
+  .mobile-image {
+    display: block;
+  }
+
+  .form-notify {
+    margin-bottom: 20px;
+  }
+}
