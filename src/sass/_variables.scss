@@ -1,0 +1,64 @@
+/* Device = Most of the Smartphones Mobiles (Portrait) */
+$screen-xxs-min: 320px;
+$screen-xxs-max: 480px;
+
+/* Device = Low Resolution Tablets, Mobiles (Landscape) */
+$screen-xs-min: 481px;
+$screen-xs-max: 767px;
+
+/* Device = Tablets, Ipads (portrait) */
+$screen-sm-min: 768px;
+$screen-sm-max: 1024px;
+
+/* Device = Laptops, Desktops */
+$screen-md-min: 1025px;
+$screen-md-max: 1280px;
+
+/* Device = Desktops */
+$screen-lg-min: 1281px;
+$screen-lg-max: 1440px;
+
+/* Higher Resolution Screens */
+$screen-xlg-min: 1441px;
+$screen-xlg-max: 2560px;
+
+$font-family-playfair: 'Playfair Display', serif;
+
+$font-weight-thin:          100;
+$font-weight-exlight:       200;
+$font-weight-light:         300;
+$font-weight-regular:       400;
+$font-weight-medium:        500;
+$font-weight-semibold:      600;
+$font-weight-bold:          700;
+$font-weight-exbold:        800;
+$font-weight-black:         900;
+
+$white: #fff;
+$pink: #5519a8;
+$yellow: #FFBA3C;
+$darkYellow: #F99000;
+
+
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+
+  /* IE10+ */
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);
+
+  /* Standard */
+  background: linear-gradient(to right, $from 0%, $to $stop);
+}
