@@ -53,6 +53,18 @@ module.exports = (env, options) => ({
         ]
       },
       {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "css/img/"
+            }
+          }
+        ]
+      },
+      {
         test: /\.(html)$/,
         use: {
           loader: "html-srcsets-loader",
