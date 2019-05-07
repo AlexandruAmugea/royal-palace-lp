@@ -1,0 +1,41 @@
+
+.form-notify {
+  margin-bottom: 75px;
+
+  input {
+    font-size: 12px;
+    color: $white;
+    background-color: $pink;
+    border: none;
+    border-radius: 20px 20px 0 20px;
+    width: 70%;
+    float: left;
+    height: 41px;
+    font-weight: 300;
+  }
+
+  input:focus {
+    border: none;
+    background: $pink;
+    color: $white;
+    box-shadow: none;
+  }
+
+  button {
+    background: linear-gradient($yellow, $darkYellow);
+    border-radius: 0 20px 20px 20px;
+    height: 41px;
+    border: none;
+    width: 30%;
+    margin-left: -20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  button:hover {
+    @include horizontal-gradient($darkYellow, $yellow);
+    transition: .25s;
+    cursor: pointer;
+  }
+}

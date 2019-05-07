@@ -1,0 +1,140 @@
+.hide-mobile {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+/*
+ Responsive tablet
+*/
+
+@media (max-width: 980px) {
+  .clock {
+    max-width: 290px;
+  }
+
+  .flip-clock-wrapper ul {
+    width: 35px;
+    margin: 5px 1px;
+  }
+
+  .flip-clock-divider {
+    width: 18px;
+  }
+
+  .flip-clock-divider .flip-clock-label {
+    right: -57px;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 50px;
+  }
+}
+
+/*
+ Responsive mobile
+*/
+@media (max-width: 768px) {
+  .img-bottom {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  p.text-copy {
+    position: static;
+    text-align: center;
+  }
+
+  .img-roulette {
+    margin-top: -20px;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+
+  h2  {
+    margin: 30px 0 23px 0;
+    text-align: center;
+  }
+
+  .clock {
+    max-width: 290px;
+    margin: 0px auto 40px;
+  }
+
+  .logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .flip-clock-wrapper ul {
+    width: 35px;
+    margin: 5px 1px;
+  }
+
+  .flip-clock-divider {
+    width: 18px;
+  }
+
+  .flip-clock-divider .flip-clock-label {
+    right: -57px;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 50px;
+  }
+
+  p {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  body {
+    padding: 20px 0;
+    background: linear-gradient(#9938D2, #351087) no-repeat left top;
+  }
+
+  .mobile-image {
+    display: block;
+  }
+
+  .form-notify {
+    margin-bottom: 20px;
+  }
+}
+
+/* Overwrite container from bootstrap */
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .form-notify {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .img-roulette {
+    margin-top: -50px;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+}

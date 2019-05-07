@@ -53,7 +53,7 @@ module.exports = (env, options) => ({
         ]
       },
       {
-        test: /background\.(png|jpg|gif|svg)$/,
+        test: /background-sm\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: "file-loader",

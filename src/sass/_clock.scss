@@ -1,0 +1,33 @@
+/* Override default style for countdown clock */
+
+.clock {
+  margin-bottom: 80px;
+}
+
+.flip-clock-wrapper {
+  margin-left: 0;
+}
+
+.flip-clock-divider .flip-clock-label {
+  top: 110px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: $white;
+}
+
+.flip-clock-wrapper ul li a div div.inn {
+  background-color: $white;
+  color: #E944C5;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  text-shadow: none;
+}
+
+.flip-clock-wrapper ul li a div.up:after {
+  background-color: #DEDEDE;
+}
+
+.flip-clock-dot {
+  background: $white;
+}
