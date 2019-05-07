@@ -5,9 +5,9 @@
 @import "../assets/flipclock.css";
 
 body {
-  background: url("../assets/background.png");
+  background: url("../assets/background.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   padding: 55px 0 15px;
   font-family: "Poppins", sans-serif;
 }
@@ -99,6 +99,43 @@ p {
   display: none;
 }
 
+
+/*
+ Responsive tablet
+*/
+
+@media (max-width: 1200px) {
+  .clock {
+    max-width: 290px;
+  }
+
+  .logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .flip-clock-wrapper ul {
+    width: 35px;
+    margin: 5px 1px;
+  }
+
+  .flip-clock-divider {
+    width: 18px;
+  }
+
+  .flip-clock-divider .flip-clock-label {
+    right: -57px;
+  }
+
+  .flip-clock-wrapper ul li a div div.inn {
+    font-size: 50px;
+  }
+}
+
+/*
+ Responsive mobile
+*/
 @media (max-width: 768px) {
   h2  {
     margin: 30px 0 23px 0;
@@ -140,7 +177,7 @@ p {
 
   body {
     padding: 20px 0;
-    background: linear-gradient(#9938D2, #351087);
+    background: linear-gradient(#9938D2, #351087) no-repeat left top;
   }
 
   .mobile-image {
