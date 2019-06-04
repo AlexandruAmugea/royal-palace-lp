@@ -32,7 +32,7 @@ $contactForm.on('submit', (ev)=> {
 
     $.ajax({
         type: "POST",
-        url: 'http://localhost:3000/api/register',
+        url: 'http://royalpalace.io:3000/api/register',
         data: email,
         success: success,
         dataType: "json"
