@@ -1,8 +1,21 @@
-const express = require('express');
+// Dependencies
 const fs = require('fs');
-const app = express();
-const port = 3000;
+const http = require('http');
+const https = require('https');
+const express = require('express');
 const bodyParser = require('body-parser');
+const app = express();
+
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/royalpalace.io/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/royalpalace.io/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/royalpalace.io/chain.pem', 'utf8');
+
+const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+};
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -32,4 +45,14 @@ app.post('/api/register', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+// Starting both http & https servers
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(80, () => {
+    console.log('HTTP Server running on port 80');
+});
+
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
+});
