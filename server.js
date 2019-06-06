@@ -23,7 +23,11 @@ app.use(bodyParser.json());
 app.use("/", express.static(__dirname + '/dist'));
 
 app.get('/', (req, res)=>{
-    res.sendFile(__dirname + '/dist/index.html');
+    if(!request.secure){
+        response.redirect("https://" + request.headers.host + request.url);
+    } else {
+        res.sendFile(__dirname + '/dist/index.html');
+    }
 });
 
 app.get("*", function(request, response){
