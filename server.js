@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get("*", function(request, response, next){
-    if(request.secure) {
+    if(!request.secure) {
         response.redirect("https://" + request.headers.host + request.url);
     } else {
         next();
