@@ -26,6 +26,12 @@ app.get('/', (req, res)=>{
     res.sendFile(__dirname + '/dist/index.html');
 });
 
+app.use(function(request, response){
+    if(!request.secure){
+        response.redirect("https://" + request.headers.host + request.url);
+    }
+});
+
 app.post('/api/register', (req, res) => {
     const email = `${req.body.email},`;
     fs.readFile("adresses.txt", "utf-8", function(err, data) {

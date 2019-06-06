@@ -5,7 +5,7 @@ const $successMsg = $('#successMsg');
 const $errorMsg = $('#errorMsg');
 const $contactForm = $('#contact-form');
 const $clock = $('.clock');
-const endDate = new Date("17 June 2019");
+const endDate = new Date("2 July 2019");
 const startDate = new Date();
 const remainingSeconds = Math.abs((endDate.getTime() - startDate.getTime()) / 1000);
 
