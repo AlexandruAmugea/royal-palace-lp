@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.get("*", function(request, response, next){
     if(!request.secure) {
-        response.redirect("https://" + request.headers.host + request.url);
+        response.redirect("https://" + request.headers.host);
     } else {
         next();
     }
@@ -31,11 +31,7 @@ app.use("/", express.static(__dirname + '/dist'));
 
 
 app.get('/', (req, res)=>{
-    if(!request.secure){
-        response.redirect("https://" + request.headers.host + request.url);
-    } else {
-        res.sendFile(__dirname + '/dist/index.html');
-    }
+    res.sendFile(__dirname + '/dist/index.html');
 });
 
 app.post('/api/register', (req, res) => {
