@@ -20,16 +20,18 @@ const credentials = {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Any request to / will go in dist folder
-app.get("*", function(request, response){
-    if(!request.secure){
-        response.redirect("https://" + request.headers.host + request.url);
-    }
-});
-
 app.use("/", express.static(__dirname + '/dist'));
 
 app.get('/', (req, res)=>{
-    res.sendFile(__dirname + '/dist/index.html');
+    if(!request.secure){
+        response.redirect("https://" + request.headers.host + request.url);
+    } else {
+        res.sendFile(__dirname + '/dist/index.html');
+    }
+});
+
+app.get("*", function(request, response){
+    response.redirect("https://" + request.headers.host + request.url);
 });
 
 app.post('/api/register', (req, res) => {
