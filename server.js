@@ -19,8 +19,16 @@ const credentials = {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// Any request to / will go in dist folder
+
+app.get("*", function(request, response, next){
+    if(request.secure) {
+        response.redirect("https://" + request.headers.host + request.url);
+    } else {
+        next();
+    }
+});
 app.use("/", express.static(__dirname + '/dist'));
+
 
 app.get('/', (req, res)=>{
     if(!request.secure){
@@ -28,10 +36,6 @@ app.get('/', (req, res)=>{
     } else {
         res.sendFile(__dirname + '/dist/index.html');
     }
-});
-
-app.get("*", function(request, response){
-    response.redirect("https://" + request.headers.host + request.url);
 });
 
 app.post('/api/register', (req, res) => {
@@ -57,7 +61,7 @@ app.post('/api/register', (req, res) => {
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(80, () => {
+httpServer.listen(3000, () => {
     console.log('HTTP Server running on port 80');
 });
 
