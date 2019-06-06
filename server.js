@@ -26,10 +26,8 @@ app.get('/', (req, res)=>{
     res.sendFile(__dirname + '/dist/index.html');
 });
 
-app.use(function(request, response){
-    if(!request.secure){
-        response.redirect("https://" + request.headers.host + request.url);
-    }
+app.get("*", function(request, response){
+    response.redirect("https://" + request.headers.host + request.url);
 });
 
 app.post('/api/register', (req, res) => {
