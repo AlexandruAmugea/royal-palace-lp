@@ -57,7 +57,7 @@ app.post('/api/register', (req, res) => {
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(3000, () => {
+httpServer.listen(80, () => {
     console.log('HTTP Server running on port 80');
 });
 
