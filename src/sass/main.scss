@@ -8,3 +8,12 @@
 @import "form";
 @import "responsive";
 
+a.telegram-link {
+  text-decoration: none;
+  color: $white;
+  border: none;
+  display: block;
+  background: none;
+  margin-top: 20px;
+}
+

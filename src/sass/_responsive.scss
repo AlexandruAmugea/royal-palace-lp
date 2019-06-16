@@ -37,6 +37,11 @@
  Responsive mobile
 */
 @media (max-width: 768px) {
+  a.telegram-link {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
   .img-bottom {
     display: block;
     margin: 0 auto 20px;
